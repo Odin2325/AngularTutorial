@@ -1,0 +1,11 @@
+<!-- <h1>Player Scores</h1>
+
+@for(player of players; track player)
+{
+    <app-player-card [player]="player" (playerID)="handleAddPoint($event)" ></app-player-card>
+} -->
+
+@for(product of products; track product)
+{
+    <app-product-item [currProduct]="product" (prodName)="handleProductRemoval($event)"></app-product-item>
+}

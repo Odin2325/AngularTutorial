@@ -1,0 +1,8 @@
+<p>
+    {{city().name}} - Population: {{city().pop}}
+</p>
+
+<input 
+    type="text"
+    placeholder="Type something for this city"
+    (input)="onTyping($event)" >

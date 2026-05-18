@@ -1,0 +1,6 @@
+<p>{{currProduct().name}} - {{currProduct().price}} </p>
+
+<button (click)="onRemoveSelected()">Remove</button>
+
+<input [formControl]="name">
+<p>{{name.value}}</p>
