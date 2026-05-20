@@ -1,0 +1,47 @@
+<article class="product-card">
+  <h3>{{ product().name }}</h3>
+
+  <p>
+    <strong>ID: </strong>
+    {{ product().id }}
+  </p>
+
+  <p>{{ product().description }}</p>
+
+  <p>
+    <strong>Brand:</strong>
+    {{ product().brand }}
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    {{ product().category }}
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    {{ product().price }}
+  </p>
+
+  <p>
+    <strong>Stock:</strong>
+    {{ product().stockQuantity }}
+  </p>
+
+  @if (product().stockQuantity > 0) {
+    <p class="status active">In stock</p>
+  } @else {
+    <p class="status inactive">Out of stock</p>
+  }
+
+  @if (product().isActive) {
+    <p class="status active">Active product</p>
+  } @else {
+    <p class="status inactive">Inactive product</p>
+  }
+  @if (product().price > 100) {
+    <p>Premium Product</p>
+  } @else {
+    <p>Standard Product</p>
+  }
+</article>

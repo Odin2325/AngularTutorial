@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+.app-header {
+  background-color: #111827;
+  color: white;
+  padding: 24px 32px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.app-header p {
+  margin: 8px 0 0;
+  color: #d1d5db;
+}
+
+.app-main {
+  padding: 32px;
+}
+
+.welcome-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-card h2 {
+  margin-top: 0;
+}
+
+.learning-card {
+  background-color: rgb(254, 255, 183);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,11 @@
+<section class="product-page">
+  <h2>Product Overview</h2>
+
+  <div class="product-list">
+    @for (product of products; track product.id) {
+      <app-product-card [product]="product"></app-product-card>
+    } @empty {
+      <p>No products available.</p>
+    }
+  </div>
+</section>
