@@ -1,0 +1,78 @@
+<section class="add-product">
+  <h3>Add Product</h3>
+
+  @if (errorMessage !== '') {
+    <p class="error-message">{{ errorMessage }}</p>
+  }
+
+  <div class="form-grid">
+    <label>
+      Name
+      <input
+        type="text"
+        [value]="name"
+        (input)="name = $any($event.target).value">
+    </label>
+
+    <label>
+      Description
+      <input
+        type="text"
+        [value]="description"
+        (input)="description = $any($event.target).value">
+    </label>
+
+    <label>
+      Brand
+      <input
+        type="text"
+        [value]="brand"
+        (input)="brand = $any($event.target).value">
+    </label>
+
+    <label>
+      Category
+      <input
+        type="text"
+        [value]="category"
+        (input)="category = $any($event.target).value">
+    </label>
+
+    <label>
+      Price
+      <input
+        type="number"
+        [value]="price"
+        (input)="price = +$any($event.target).value">
+    </label>
+
+    <label>
+      Stock Quantity
+      <input
+        type="number"
+        [value]="stockQuantity"
+        (input)="stockQuantity = +$any($event.target).value">
+    </label>
+
+    <label>
+      Supplier
+      <input
+        type="text"
+        [value]="supplier"
+        (input)="supplier = $any($event.target).value">
+    </label>
+
+    <label class="checkbox-label">
+      <input
+        type="checkbox"
+        [checked]="isActive"
+        (change)="isActive = $any($event.target).checked">
+      Active product
+    </label>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" (click)="onAddProduct()">Add Product</button>
+    <button type="button" class="secondary" (click)="resetForm()">Reset</button>
+  </div>
+</section>

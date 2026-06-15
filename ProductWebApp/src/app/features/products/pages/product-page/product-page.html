@@ -1,9 +1,28 @@
 <section class="product-page">
   <h2>Product Overview</h2>
 
+  <app-product-summary
+    [totalProducts]="totalProducts"
+    [activeProducts]="activeProducts"
+    [productsInStock]="productsInStock"
+    [productsOutOfStock]="productsOutOfStock"
+    [selectedProduct]="selectedProduct"
+    [inactiveProducts]="inactiveProducts"
+  >
+  </app-product-summary>
+
+  <app-add-product 
+    (productCreated)="onProductCreated($event)"> 
+  </app-add-product>
+
   <div class="product-list">
     @for (product of products; track product.id) {
-      <app-product-card [product]="product"></app-product-card>
+      <app-product-card
+        [product]="product"
+        (selectProduct)="onProductSelected($event)"
+        (deleteProduct)="onProductDeleted($event)"
+        (toggleActive)="onProductActiveToggled($event)">
+      </app-product-card>
     } @empty {
       <p>No products available.</p>
     }

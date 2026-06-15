@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Product } from '../../../../core/models/product.models';
 
 @Component({
@@ -9,4 +9,20 @@ import { Product } from '../../../../core/models/product.models';
 })
 export class ProductCard {
   product = input.required<Product>();
+
+  selectProduct = output<Product>();
+  deleteProduct = output<number>();
+  toggleActive = output<number>();
+
+  onSelect(){
+    this.selectProduct.emit(this.product());
+  }
+
+  onDelete(){
+    this.deleteProduct.emit(this.product().id);
+  }
+
+  onToggle(){
+    this.toggleActive.emit(this.product().id)
+  }
 }

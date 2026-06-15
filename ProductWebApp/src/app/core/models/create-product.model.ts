@@ -1,5 +1,4 @@
-export interface Product {
-  id: number;
+export interface CreateProduct {
   name: string;
   description: string;
   brand: string;

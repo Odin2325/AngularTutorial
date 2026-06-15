@@ -1,0 +1,69 @@
+<section class="product-summary">
+  <h3>Product Summary</h3>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span class="summary-label">Total products</span>
+      <strong>{{ totalProducts() }}</strong>
+    </div>
+
+    <div class="summary-card">
+      <span class="summary-label">Active products</span>
+      <strong>{{ activeProducts() }}</strong>
+    </div>
+
+    <div class="summary-card">
+      <span class="summary-label">Inactive products</span>
+      <strong>{{ inactiveProducts() }}</strong>
+    </div>
+
+    <div class="summary-card">
+      <span class="summary-label">Products in stock</span>
+      <strong>{{ productsInStock() }}</strong>
+    </div>
+
+    <div class="summary-card">
+        <span class="summary-label">Out of stock products</span>
+        <strong>{{ productsOutOfStock() }}</strong>
+    </div>
+  </div>
+
+  <div class="summary-warning">
+    @if (productsInStock()===0) {
+        <p><strong>Warning: No products are currently in stock.</strong></p>
+    }
+  </div>
+
+  <div class="selected-product">
+    <h4>Selected Product</h4>
+
+    @if (selectedProduct()) {
+      <p>
+        <strong>Name:</strong>
+        {{ selectedProduct()!.name }}
+      </p>
+
+      <p>
+        <strong>Brand:</strong>
+        {{ selectedProduct()!.brand }}
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        {{ selectedProduct()!.category }}
+      </p>
+
+      <p>
+        <strong>Price:</strong>
+        {{ selectedProduct()!.price }}
+      </p>
+
+      <p>
+        <strong>Supplier:</strong>
+        {{selectedProduct()!.supplier}}
+      </p>
+    } @else {
+      <p>No product selected.</p>
+    }
+  </div>
+</section>
