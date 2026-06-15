@@ -1,47 +1,48 @@
 :host {
   display: block;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #1f2937;
+  background-color: #f3f4f6;
 }
 
 .app-header {
   background-color: #111827;
   color: white;
-  padding: 24px 32px;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 32px;
 }
 
 .app-header p {
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   color: #d1d5db;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.main-nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: white;
+}
+
+.main-nav a.active-link {
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .app-main {
   padding: 32px;
-}
-
-.welcome-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.welcome-card h2 {
-  margin-top: 0;
-}
-
-.learning-card {
-  background-color: rgb(254, 255, 183);
-  border-radius: 12px;
-  padding: 24px;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }

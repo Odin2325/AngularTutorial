@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { Product } from '../../../../core/models/product.models';
+import { Component, input, output } from '@angular/core';
+import { Product } from '../../models/product.models';
 
 @Component({
   selector: 'app-product-summary',
@@ -14,4 +14,10 @@ export class ProductSummary {
   productsOutOfStock = input.required<number>();
   selectedProduct = input<Product | null>(null);
   inactiveProducts = input.required<number>();
+
+  clearSelectedProduct = output<void>();
+
+  onClearSelection(){
+    this.clearSelectedProduct.emit();
+  }
 }

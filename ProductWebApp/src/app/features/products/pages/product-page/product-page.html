@@ -2,29 +2,41 @@
   <h2>Product Overview</h2>
 
   <app-product-summary
-    [totalProducts]="totalProducts"
-    [activeProducts]="activeProducts"
-    [productsInStock]="productsInStock"
-    [productsOutOfStock]="productsOutOfStock"
-    [selectedProduct]="selectedProduct"
-    [inactiveProducts]="inactiveProducts"
-  >
+    [totalProducts]="productService.totalProducts()"
+    [activeProducts]="productService.activeProducts()"
+    [productsInStock]="productService.productsInStock()"
+    [selectedProduct]="productService.selectedProduct()"
+    [inactiveProducts]="productService.inactiveProducts()"
+    [productsOutOfStock]="productService.productsOutOfStock()"
+    (clearSelectedProduct)="productService.clearSelection()">
   </app-product-summary>
 
-  <app-add-product 
-    (productCreated)="onProductCreated($event)"> 
+  <app-add-product
+    (productCreated)="productService.createProduct($event)">
   </app-add-product>
 
+  @if (productService.inactiveProducts() > 0) {
+    <section class="page-actions">
+      <button
+        type="button"
+        class="danger"
+        (click)="productService.deleteAllInactiveProducts()">
+        Delete All Inactive Products
+      </button>
+    </section>
+  }
+
   <div class="product-list">
-    @for (product of products; track product.id) {
+    @for (product of productService.products(); track product.id) {
       <app-product-card
         [product]="product"
-        (selectProduct)="onProductSelected($event)"
-        (deleteProduct)="onProductDeleted($event)"
-        (toggleActive)="onProductActiveToggled($event)">
+        (selectProduct)="productService.selectProduct($event)"
+        (deleteProduct)="productService.deleteProduct($event)"
+        (toggleActive)="productService.toggleActive($event)">
       </app-product-card>
     } @empty {
       <p>No products available.</p>
     }
   </div>
+
 </section>

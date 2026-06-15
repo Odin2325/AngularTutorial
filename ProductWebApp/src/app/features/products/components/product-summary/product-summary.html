@@ -62,6 +62,20 @@
         <strong>Supplier:</strong>
         {{selectedProduct()!.supplier}}
       </p>
+
+      <p>
+        <strong>Status:</strong>
+        @if (selectedProduct()!.isActive){
+          Active
+        }
+        @else {
+          Inactive
+        }
+      </p>
+
+      <button type="button" class="clear-button" (click)="onClearSelection()">
+        Clear Selection
+      </button>
     } @else {
       <p>No product selected.</p>
     }

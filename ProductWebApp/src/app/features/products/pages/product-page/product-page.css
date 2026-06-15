@@ -11,3 +11,24 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
+
+.page-actions {
+  margin-bottom: 24px;
+}
+
+.page-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.page-actions button.danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.page-actions button.danger:hover {
+  background-color: #b91c1c;
+}

@@ -1,0 +1,18 @@
+.home-page {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.home-page h2 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.home-page p {
+  color: #374151;
+  line-height: 1.6;
+}
